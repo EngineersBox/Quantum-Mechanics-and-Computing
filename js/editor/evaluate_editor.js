@@ -100,7 +100,8 @@
   // Propagate the changes to the editor onto the window
   CodeMirror.on(window, "hashchange", function() {
     if (location.hash.slice(1)) {
-      input.value = theme; selectTheme();
+      input.value = input.options[input.selectedIndex].textContent;
+      selectTheme();
     }
   });
 
