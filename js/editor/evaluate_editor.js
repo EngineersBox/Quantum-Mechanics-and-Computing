@@ -38,6 +38,7 @@
       return output;
     } else {
       // Return the evalutated string of the editor contents
+      /* THIS IS BAD (LOL) I WILL CHANGE IT BUT HAVENT GOT AROUND TO A SAFER METHOD YET*/
       return eval(val);
     }
   }
