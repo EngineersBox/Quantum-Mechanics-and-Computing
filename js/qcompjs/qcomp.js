@@ -81,10 +81,10 @@ class QC {
   }
 
   applyOperatorToBits(operation, bits) {
-    if (typeof bits === Number) {
+    if (Number.isInteger(bits)) {
       this.values[bits] = math.multiply(this.values[bits], operation);
       return this.values;
-    } else if (typeof bits == Array) {
+    } else if (Array.isArray(bits)) {
       if (this.ALL.equals(bits)) {
         this.values = this.values.map(val => math.multiply(val, operation));
       } else {
@@ -99,12 +99,12 @@ class QC {
   }
 
   applyControlledOperatorToBits(operation, cBits, tBits) {
-    if ((typeof tBits === Number )&& (typeof cBits === Number)) {
+    if (Number.isInteger(cBits) && Number.isInteger(tBits)) {
       if (this.values[cBits].equals(one)) {
         this.values[tBits] = math.multiply(this.values[tBits], operation);
       }
       return this.values;
-    } else if ((typeof cBits === Array) || (typeof tBits === Array)) {
+    } else if (Array.isArray(cBits) || Array.isArray(tBits)) {
       if (this.ALL.equals(cBits)) {
         throw new Error("Error: Control bits cannot be ALL");
       } else if (this.ALL.equals(tBits)) {
