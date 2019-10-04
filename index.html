@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Quantum Mechanics and Computing</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/qm-superpos.ico" />
+    <link rel="stylesheet" href="css/main_style.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/q-properties.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+  </head>
+  <body>
+    <div class="side-nav">
+      <ol>
+        <li><a href="index.html"><span>INTRO</span> TO QUANTUM PHYSICS</a></li>
+        <li><hr></li>
+        <li>
+          <ul>
+            <li><i class="fas fa-angle-double-right"></i><a href="index.html#intro-target"> Introduction</a></li>
+            <li><br></li>
+            <li><br></li>
+          </ul>
+        </li>
+        <li><a href="mechanics.html"><span>QUANTUM</span> MECHANICS</a></li>
+        <li><hr></li>
+        <li>
+          <ul>
+            <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#intro-target"> Where It All Began</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#wpd-target"> Wave-Particle Duality</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#measurement-target"> Measurement</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#superposition-target"> Superposition</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#entanglement-target"> Entanglement and Nonlocality</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#founders-target"> Founders of Quantum Mechanics</a></li>
+            <li><br></li>
+            <li><br></li>
+          </ul>
+        </li>
+        <li><a href="computing.html"><span>QUANTUM</span> COMPUTATION</a></li>
+        <li><hr></li>
+        <li>
+          <ul>
+            <li><i class="fas fa-angle-double-right"></i><a href="computing.html#qubitsvsbits-target"> Q-Bits vs Bits</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="computing.html#gates-target"> Gates</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="computing.html#algorithms-target"> Standard Algorithms</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="computing.html#qcompjs-target"> QComp.js Library</a>
+            <li><i class="fas fa-angle-double-right"></i><a href="computing.html#jseditor-target"> JavsScript Editor</a></li>
+            <li><br></li>
+            <li><br></li>
+          </ul>
+        </li>
+        <li><a href="index.html"><span>OTHER</span> INFORMATION</a></li>
+        <li><hr></li>
+        <li>
+          <ul>
+            <li><i class="fas fa-angle-double-right"></i><a href="index.html#social-target"> Social Media</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="index.html#feedback-target"> Feedback Form</a></li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+    <div class="landing">
+      <div class="box-wrapper">
+        <div class="header-box" id="scrollFade">
+          <div class="header-box-info">
+            <p id="text-pos"><span>QUANTUM</span> MECHANICS</p>
+            <p>&</p>
+            <p>QUANTUM <span>COMPUTATION</span></p>
+          </div>
+        </div>
+        <div class="down-button scrollFade" id="scrollTo">
+          <a href="#intro-target"><i class="fas fa-arrow-alt-circle-down"></i></a>
+        </div>
+      </div>
+      <div class="site-nav">
+        <ol>
+          <li><a href="index.html"><span>INTRO</span> TO QUANTUM PHYSICS</a></li>
+          <li><hr></li>
+          <li>
+            <ul>
+              <li><i class="fas fa-angle-double-right"></i><a href="index.html#intro-target"> Introduction</a></li>
+              <li><br></li>
+              <li><br></li>
+            </ul>
+          </li>
+          <li><a href="mechanics.html"><span>QUANTUM</span> MECHANICS</a></li>
+          <li><hr></li>
+          <li>
+            <ul>
+              <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#intro-target"> Where It All Began</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#wpd-target"> Wave-Particle Duality</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#measurement-target"> Measurement</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#superposition-target"> Superposition</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#entanglement-target"> Entanglement and Nonlocality</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#founders-target"> Founders of Quantum Mechanics</a></li>
+              <li><br></li>
+              <li><br></li>
+            </ul>
+          </li>
+          <li><a href="computing.html"><span>QUANTUM</span> COMPUTATION</a></li>
+          <li><hr></li>
+          <li>
+            <ul>
+              <li><i class="fas fa-angle-double-right"></i><a href="computing.html#qubitsvsbits-target"> Q-Bits vs Bits</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="computing.html#gates-target"> Gates</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="computing.html#algorithms-target"> Standard Algorithms</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="computing.html#qcompjs-target"> QComp.js Library</a>
+              <li><i class="fas fa-angle-double-right"></i><a href="computing.html#jseditor-target"> JavsScript Editor</a></li>
+              <li><br></li>
+              <li><br></li>
+            </ul>
+          </li>
+          <li><a href="index.html"><span>OTHER</span> INFORMATION</a></li>
+          <li><hr></li>
+          <li>
+            <ul>
+              <li><i class="fas fa-angle-double-right"></i><a href="index.html#social-target"> Social Media</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="index.html#feedback-target"> Feedback Form</a></li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="split-1" >
+      <div id="intro-target"></div>
+    </div>
+    <div class="intro-wrapper">
+      <div class="intro-left">
+        <img src="images/superpos-elec-bg.png" alt="">
+      </div>
+      <div class="intro-right">
+        <div class="intro-info">
+          <article><h3><i class="fas fa-angle-double-right"></i><span> INTRODUCTION</span> TO THE QUANTUM WORLD</h3></article>
+          <hr>
+          <p>Quantum physics is about probabilites: the probability that some form of matter
+            will be in one place or another at any given moment. And that position is mutually dependant
+            on momentum. We will only which position and momentum the particle has once it has been
+            observed. Before that, it has all positions and all momenta.
+          </p>
+          <p>
+          That is called the superposition.
+          <br>And that is <u>revolutionary</u>.
+          </p>
+          <q>If you think you understand quantum mechanics, you don't understand quantum mechanics.</q>
+          <br><br><b><i class="fas fa-angle-double-right fa-second"></i> <a>RICHARD FEYNMAN</a></b>
+        </div>
+      </div>
+    </div>
+    <div id="social-target"></div>
+    <div class="social-wrapper">
+      <div class="social-left">
+        <div class="social-info">
+          <article><h3><i class="fas fa-angle-double-right"></i><span> QUANTUM</span> SOCIAL MEDIA</h3></article>
+          <hr>
+          <p>Ok, the title of this section may be slightly misleading, but i promise you there is good content ahead!</p>
+          <p>Due to quantum physics being a very new and relatively unexplored field (compared to classical physics), there is always new discoveries
+            and content being published. One of the most brilliant places to find this content is with the releases of academic papers. arXiv.org
+            archive these papers, with content that ranges from physics to mathematics, finance, computer science and more. But most relevant,
+            is that they regularly update with new releases of papers, posting a tweet when they do. The twitter feed for arXiv.org can be found on here.
+          </p>
+          <div class="social-media-links">
+            <div class="capsule">
+              <a href="https://twitter.com/" target="_blank"><i class="sc fab fa-twitter-square"></i></a>
+              <a href="https://facebook.com/" target="_blank"><i class="sc fab fa-facebook-square"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="social-right">
+        <div class="twitter-feed">
+          <a class="twitter-timeline" data-theme="dark" data-link-color="#FAB81E" href="https://twitter.com/QuantumPapers?ref_src=twsrc%5Etfw">Tweets by QuantumPapers</a>
+          <script async src="https://platform.twitter.com/widgets.js"></script>
+        </div>
+      </div>
+    </div>
+    <div id="feedback-target"></div>
+    <div class="feedback-wrapper" id="feedback">
+      <div class="feedback-left">
+        <div class="form-wrapper">
+          <form>
+            <fieldset>
+              <legend>TELL ME WHAT <span>YOU</span> THINK</legend>
+              <br>
+              <input name="name" type="text" class="feedback-input" placeholder="NAME"/>
+              <input name="email" type="text" class="feedback-input" placeholder="EMAIL"/>
+              <textarea name="text" class="feedback-input" placeholder="MESSAGE"></textarea>
+              <input type="submit" value="SUBMIT"/>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <div class="feedback-right">
+        <div class="generic-info">
+          <article><h3><i class="fas fa-angle-double-right"></i><span> IMPROVING</span> THINGS</h3></article>
+          <hr>
+          <p>Topics such as quantum mechanics and computing are quite difficult to address in an succinct
+            and easy to understand manner.</p>
+          <p>I would love to know what you thought about the content and any improvements
+            that could be made. send a message in the form and let me know your thoughts.
+          </p>
+          <i class="fas fa-angle-double-right"></i><a> JACK KILRAIN</a>
+        </div>
+      </div>
+    </div>
+    <nav class="nav-burger">
+      <i class="fas fa-bars"></i>
+      <i class="fas fa-times"></i>
+    </nav>
+    <div class="image-nav-wrap">
+      <div class="image-nav">
+        <img src="images/qm-image-nav2.png" usemap="#image_map" alt="">
+        <map name="image_map">
+          <area alt="Superposition" title="Superposition" href="mechanics.html#superposition-target" coords="206,47,24" shape="circle" id="super-link">
+          <area alt="Entanglement" title="Entanglement" href="mechanics.html#entanglement-target" coords="118,47,25" shape="circle" id="ent-link">
+          <area alt="Measurement" title="Measurement" href="mechanics.html#measurement-target" coords="30,47,24" shape="circle" id="meas-link">
+          <area alt="Wave-Particle Duality" title="Wave-Particle Duality" href="mechanics.html#wpd-target" coords="257,33,345,68" shape="rect" id="wpd-link">
+        </map>
+        <span id="hover-title"></span>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- temp stuff
+-oscillating particles
+<div class = "particle-animation">
+  <div class = "obj-1"></div>
+  <div class = "obj-2"></div>
+</div>
+-->

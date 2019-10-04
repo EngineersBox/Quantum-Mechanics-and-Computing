@@ -1,0 +1,23 @@
+body {
+  width: 100%;
+  font: 24px 'Lato';
+}
+
+.log-table {
+  padding-top: 5%;
+  padding-left: 3%;
+}
+
+.log-table table {
+  width: 90%;
+  border-spacing: 0.5em;
+}
+
+.log-table table, .log-table th, .log-table td {
+  border: 1px solid black;
+}
+
+.log-table th, .log-table td {
+  width: 25%;
+  padding: 0.5em;
+}

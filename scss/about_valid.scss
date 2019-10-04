@@ -1,0 +1,81 @@
+//Global Variables
+$body-bg: #fff;
+$content-bg: #000;
+
+$red: #ee5253;
+$light_red: #ff6b6b;
+$blue: #2e86de;
+$light_blue: #54a0ff;
+$green: #10ac84;
+$light_green: #1dd1a1;
+$yellow: #ff9f43;
+$light_yellow: #feca57;
+$grey: #576574;
+$light_grey: #8395a7;
+$dark_grey: #222f3e;
+$white: #c8d6e5;
+
+/*--------HTML Tags [Overrides]--------*/
+html,body {
+  width: 100%;
+  overflow-x: hidden;
+	margin: 0;
+  scroll-behavior: smooth;
+}
+
+/*--------Globals--------*/
+
+/*--------INDEX.HTML--------*/
+$content-border: #fff;
+
+body {
+  font: 24px 'Lato';
+  background: $body-bg;
+  overflow-x: hidden;
+}
+
+.reflection {
+  width: 100%;
+  height: auto;
+  padding: 2em;
+}
+
+h1 {
+  margin-left: 1em;
+}
+
+hr {
+  border: 1px solid $dark_grey;
+  margin-left: 2em;
+  margin-right: 1em;
+}
+
+span {
+  color: $red;
+}
+
+.validation {
+  width: 100%;
+
+  h2 {
+    margin-left: 1em;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  img {
+    width: 50%;
+    padding: 10px;
+    border-radius: 1em;
+    border: 3px solid $dark_grey;
+    box-shadow: -10px 10px $dark_grey;
+    transition: 0.2s;
+  }
+
+  img:hover {
+    border: 3px solid $grey;
+    box-shadow: -10px 10px $grey;
+  }
+}

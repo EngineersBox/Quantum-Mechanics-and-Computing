@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Quantum Mechanics and Computing</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/qm-superpos.ico" />
+    <link rel="stylesheet" href="css/mechanics_style.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/q-properties.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+  </head>
+  <body>
+    <div class="side-nav">
+      <ol>
+        <li><a href="index.html"><span>INTRO</span> TO QUANTUM PHYSICS</a></li>
+        <li><hr></li>
+        <li>
+          <ul>
+            <li><i class="fas fa-angle-double-right"></i><a href="index.html#intro-target"> Introduction</a></li>
+            <li><br></li>
+            <li><br></li>
+          </ul>
+        </li>
+        <li><a href="mechanics.html"><span>QUANTUM</span> MECHANICS</a></li>
+        <li><hr></li>
+        <li>
+          <ul>
+            <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#intro-target"> Where It All Began</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#wpd-target"> Wave-Particle Duality</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#measurement-target"> Measurement</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#superposition-target"> Superposition</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#entanglement-target"> Entanglement and Nonlocality</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#founders-target"> Founders of Quantum Mechanics</a></li>
+            <li><br></li>
+            <li><br></li>
+          </ul>
+        </li>
+        <li><a href="computing.html"><span>QUANTUM</span> COMPUTATION</a></li>
+        <li><hr></li>
+        <li>
+          <ul>
+            <li><i class="fas fa-angle-double-right"></i><a href="computing.html#qubitsvsbits-target"> Q-Bits vs Bits</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="computing.html#gates-target"> Gates</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="computing.html#algorithms-target"> Standard Algorithms</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="computing.html#qcompjs-target"> QComp.js Library</a>
+            <li><i class="fas fa-angle-double-right"></i><a href="computing.html#jseditor-target"> JavsScript Editor</a></li>
+            <li><br></li>
+            <li><br></li>
+          </ul>
+        </li>
+        <li><a href="index.html"><span>OTHER</span> INFORMATION</a></li>
+        <li><hr></li>
+        <li>
+          <ul>
+            <li><i class="fas fa-angle-double-right"></i><a href="index.html#social-target"> Social Media</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="index.html#feedback-target"> Feedback Form</a></li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+    <div class="landing">
+      <div class="box-wrapper">
+        <div class="header-box scrollFade">
+          <div class="header-box-info scrollFade">
+            <p id="text-pos"><span>QUANTUM</span></p>
+            <p>MECHANICS</p>
+          </div>
+        </div>
+        <div class="down-button scrollFade" id="scrollTo">
+          <a href="#intro-target"><i class="fas fa-arrow-alt-circle-down"></i></a>
+        </div>
+      </div>
+      <div class="site-nav">
+        <ol>
+          <li><a href="index.html"><span>INTRO</span> TO QUANTUM PHYSICS</a></li>
+          <li><hr></li>
+          <li>
+            <ul>
+              <li><i class="fas fa-angle-double-right"></i><a href="index.html#intro-target"> Introduction</a></li>
+              <li><br></li>
+              <li><br></li>
+            </ul>
+          </li>
+          <li><a href="mechanics.html"><span>QUANTUM</span> MECHANICS</a></li>
+          <li><hr></li>
+          <li>
+            <ul>
+              <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#intro-target"> Where It All Began</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#wpd-target"> Wave-Particle Duality</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#measurement-target"> Measurement</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#superposition-target"> Superposition</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#entanglement-target"> Entanglement and Nonlocality</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#founders-target"> Founders of Quantum Mechanics</a></li>
+              <li><br></li>
+              <li><br></li>
+            </ul>
+          </li>
+          <li><a href="computing.html"><span>QUANTUM</span> COMPUTATION</a></li>
+          <li><hr></li>
+          <li>
+            <ul>
+              <li><i class="fas fa-angle-double-right"></i><a href="computing.html#qubitsvsbits-target"> Q-Bits vs Bits</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="computing.html#gates-target"> Gates</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="computing.html#algorithms-target"> Standard Algorithms</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="computing.html#qcompjs-target"> QComp.js Library</a>
+              <li><i class="fas fa-angle-double-right"></i><a href="computing.html#jseditor-target"> JavsScript Editor</a></li>
+              <li><br></li>
+              <li><br></li>
+            </ul>
+          </li>
+          <li><a href="index.html"><span>OTHER</span> INFORMATION</a></li>
+          <li><hr></li>
+          <li>
+            <ul>
+              <li><i class="fas fa-angle-double-right"></i><a href="index.html#social-target"> Social Media</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="index.html#feedback-target"> Feedback Form</a></li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="split-1" >
+      <div id="intro-target"></div>
+    </div>
+    <div class="intro-wrapper">
+      <div class="intro-left">
+        <div class="intro-info re-align-neg">
+          <h1><i class="fas fa-angle-double-right"></i> <span>WHERE</span> IT ALL BEGAN</h1>
+          <hr>
+          <p>A fundamental principle within quantum mechanics is the duality of light. Classical physics tells us that light behaves as a continuous wave, this lead to a contradiction known as the Ultraviolet (UV) Catastrophe. The problem involves the produced radiation from a closed source.</p>
+          <p>Classical physics predicts that if a closed object was heated up such that light could not escape its confines, then the ultraviolet radiation produced should be infinite in amount. However, this was not the case shown by experiments.</p>
+          <div class="img-adj"><img src="images/uv-box.png" alt=""></div>
+        </div>
+      </div>
+      <div class="intro-right right-align">
+        <div class="intro-info">
+          <p>Max Planck&apos;s resolution to this was a proposition that light is not a continuous quantity, rather discrete &apos;packets&apos; (quanta, later named by Einstein). This resolved the UV Catastrophe as discrete quantities of any type cannot be infinite in nature, therefore showing that the resulting radiation is not infinite in amount.</p>
+          <p>From this very simple alteration, the study of the quantization of energy, had begun.</p>
+          <p>The beginning of quantum mechanics.</p>
+        </div>
+      </div>
+    </div>
+    <div id="wpd-target"></div>
+    <div class="wpd-wrapper">
+      <div class="wpd-left">
+        <div class="wpd-info">
+          <h1><i class="fas fa-angle-double-right"></i> <span>WAVE-PARTICLE</span> DUALITY</h1>
+          <hr>
+          <p>The double slit experiment, involves firing particles through a plate with two closely cut slits, showing the dual nature of particles. Light passes though both slits simultaneously, it then interferes with itself (wave like). This produces areas with large amplitudes and areas with no amplitudes, an interference pattern.</p>
+          <p>These areas correspond to probabilities of finding the point (particle like) of light when it eventually strikes the wall behind the slits.
+             This pattern only emerges when the particles are not measured, or observed, once they are, the interference pattern collapses. Resulting in two distinct lines, matching the double slits.</p>
+          <p>Heisenberg&apos;s Uncertainty Principle explains the interfernce pattern, stating; we cannot measure the position and momentum of a particle with absolute precision. These values are inversely dependant, the more precise one is defined, the less precisely the other is defined.
+             In the case of the experiment, the high amplitude areas are well defined, leading to higher probabilties of striking the wall at that location. Subsequently, the smaller amplitude areas have smaller probabilties and less change of striking the wall in that area. </p>
+        </div>
+      </div>
+      <div class="wpd-right">
+        <div class="animation-wrapper">
+          <div class="wpd-animation"></div>
+          <p>The brighter yellow areas show higher probabilties (larger amplitudes), the red show areas with no amplitude</p>
+        </div>
+      </div>
+    </div>
+    <div id="measurement-target"></div>
+    <div class="measurement-wrapper" id="measurement-wrapper">
+      <div class="measurement-left">
+        <div class="m-hover-wrap">
+          <div class="measurement">
+            <div class="m-particle"></div>
+          </div>
+          <div class="m-values">
+            <h2><i class="fas fa-angle-double-right"></i> PROBABILITIES</h2>
+            <p><i>Hover over the pink circle to collapse the superposition to one of two states. The probabilities for these states can be seen below.</i></p>
+            <p><img src="images/particle-icons/red-particle.ico" class="red-particle" alt=""> SPIN UP (RED): <span id="prob-content-red">? %</span><br>
+            <img src="images/particle-icons/blue-particle.ico" class="blue-particle" alt=""> SPIN DOWN (BLUE): <span id="prob-content-blue">? %</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="measurement-right">
+        <div class="measurement-info">
+          <h1><i class="fas fa-angle-double-right"></i> MEASUREMENT</h1>
+          <hr>
+          <p>An important concept in quantum mechanics is the idea of measurement. In the classical sense this is exacting a value for a specific quantity against a known scale. Although this is partly true for some aspects of quantum mechanics,
+             it more closely refers to the act of interaction with a system. Whether it be via light (observation), direct interaction, or indirectly by identifying the properties of the system from external interactions.</p>
+          <p>More specifically, measurement effects the entire state of a quantum system (a single particle or a group of particle in an area under consideration). When a system or particle is observed, it collapses the wave function
+             (relation between position and momentum, which fully describes the system) into a single definite state.</p>
+          <p>There are multiple possible states of a quantum system, each described with a probability assigned as a coffecient to each state. When the system is oberserved, only one of the possible states is chosen.
+             The higher the probability, the more likely that is the state it will collapse to.</p>
+        </div>
+      </div>
+    </div>
+    <div id="superposition-target"></div>
+    <div class="superposition-wrapper" id="superposition-wrapper">
+      <div class="superposition-left">
+        <div class="superposition-info">
+          <h1><i class="fas fa-angle-double-right"></i> SUPERPOSITION</h1>
+          <hr>
+          <p>An intriguing phenomenon known as superposition allows particles to have multiple states. These states are in constant flux, having a probability assigned to each. Once they collapse (after being measured) only one of the states becomes present. This is called decoherence.</p>
+          <p>Erwin Schr&ouml;dinger devised a famous though experiment where a cat is put in a box with a Geiger counter, small radioactive element and a contained poison gas. Within an hour, one of the atoms of the radioactive material might decay.
+             If it does, the Geiger counter will detect it and release the poison, killing the cat. The question is: At the end of the hour, is the cat dead or alive?</p>
+          <p>According to quantum physics (specifically the Copenhagen interpretation), the cat is both dead and alive, in a superposition. It only takes one states (dead or alive) once we open the box to check; measuring the superposition and breaking it down to one state.</p>
+        </div>
+      </div>
+      <div class="superposition-right">
+        <div class="super-animation-wrapper">
+          <div class="super-wrapper">
+            <div class="superposition-states">
+        	    <div class="s-state-1"></div>
+              <div class="s-state-2"></div>
+            </div>
+          </div>
+          <div class="spos-content-text">
+            <h2><i class="fas fa-angle-double-right"></i> STATES</h2>
+            <p><i>Hover over the particles to put them into a superposition.</i></p>
+            <p><img src="images/particle-icons/red-particle.ico" class="red-particle" alt=""> SPIN UP (RED)<br>
+            <img src="images/particle-icons/blue-particle.ico" class="blue-particle" alt=""> SPIN DOWN (BLUE)<br>
+            <img src="images/particle-icons/pink-particle.ico" class="pink-particle" alt=""> SUPERPOSITION (PINK)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="entanglement-target"></div>
+    <div class="entanglement-wrapper" id="entanglement-wrapper">
+      <div class="entanglement-left">
+        <div class="e-wrap">
+          <div class="ent-content">
+            <div class="entanglement">
+        	    <div class="e-particle-1"></div>
+              <div class="e-particle-2"></div>
+            </div>
+          </div>
+          <div class="e-values">
+            <h2><i class="fas fa-angle-double-right"></i> PROBABILITIES</h2>
+            <p><i>Hover over one of the pink particles to collpase the entanglement and superposition of both particles. The probabilities for these states can be seen below.</i></p>
+            <p><img src="images/particle-icons/red-particle.ico" class="red-particle" alt=""> SPIN UP (RED): <span id="ent-prob-content-red">? %</span><br>
+            <img src="images/particle-icons/blue-particle.ico" class="blue-particle" alt=""> SPIN DOWN (BLUE): <span id="ent-prob-content-blue">? %</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="entanglement-right">
+        <div class="entanglement-info">
+          <h1><i class="fas fa-angle-double-right"></i> <span>ENTANGLEMENT</span> AND NONLOCALITY</h1>
+          <hr>
+          <p>A remarkable feature of quantum mechanics is entanglement, where pairs of particles that have physically interacted become dependant on each others state. To understand entanglement, first the concept of nonlocality must be grasped.</p>
+          <p>If one particle (of an entangled pair) is measured to have a certain state (spin up for example) then the other will instantaneously collapse to the opposing state (spin down). Collapse of a wave function appears to transcend the limits of causality according to special relativity.</p>
+          <p>This phenomenon does not break the laws of maximum speed at which information can travel (speed of light).
+             There is not information communicated between the particles, only their states (intrinsic properties) are made dependant.</p>
+        </div>
+      </div>
+    </div>
+    <div id="founders-target"></div>
+    <div class="founders-wrapper" id="founders-wrapper">
+      <div class="founders-left">
+        <div class="gallery">
+          <div class="g-row">
+            <div class="g-column">
+              <div class="g-element">
+                <img src="images/QMP/Planck.jpg" alt="">
+                <p><i class="fas fa-angle-double-right"></i> <span>Max Planck</span> - Proposed light is discrete finite packets to resolve the ultraviolet catastrophe.</p>
+              </div>
+              <div class="g-element">
+                <img src="images/QMP/Einstein.jpg" alt="">
+                <p><i class="fas fa-angle-double-right"></i> <span>Albert Einstein</span> - Explained the photoelectric effect with quanta of light (discrete packets).</p>
+              </div>
+              <div class="g-element">
+                <img src="images/QMP/Dirac.jpg" alt="">
+                <p><i class="fas fa-angle-double-right"></i> <span>Paul Dirac</span> - Devised a relativistic wave equation to describe particles and their interactions.</p>
+              </div>
+            </div>
+            <div class="g-column">
+              <div class="g-element">
+                <img src="images/QMP/Heisenberg.jpg" alt="">
+                <p><i class="fas fa-angle-double-right"></i> <span>Werner Heisenberg</span> - Described the mutual dependancy of position and momentum of particles.</p>
+              </div>
+              <div class="g-element">
+                <img src="images/QMP/Schrodinger.jpg" alt="">
+                <p><i class="fas fa-angle-double-right"></i> <span>Erwin Schr&ouml;dinger</span> - Created an equation to describe the changes of a wave function over time.</p>
+              </div>
+              <div class="g-element">
+                <img src="images/QMP/Feynmann.jpg" alt="">
+                <p><i class="fas fa-angle-double-right"></i> <span>Richard Feynman</span> - Developed the path integral forumlation of quantum mechanics.</p>
+              </div>
+            </div>
+            <div class="g-column">
+              <div class="g-element">
+                <img src="images/QMP/Pauli.jpg" alt="">
+                <p><i class="fas fa-angle-double-right"></i> <span>Wolfgang Pauli</span> - Formulated the exclusion principle, that no two electrons can exist in the same quantum state.</p>
+              </div>
+              <div class="g-element">
+                <img src="images/QMP/De_Broglie.jpg" alt="">
+                <p><i class="fas fa-angle-double-right"></i> <span>Louis De Broglie</span> - Proposed that all matter has wave properties.</p>
+              </div>
+              <div class="g-element">
+                <img src="images/QMP/Bohr.jpg" alt="">
+                <p><i class="fas fa-angle-double-right"></i> <span>Niels Bohr</span> - Proposed that electron energy levels are discrete and revolve in in stable orbits.</p>
+              </div>
+            </div>
+            <div class="g-column">
+              <div class="g-element">
+                <img src="images/QMP/Fermi.jpg" alt="">
+                <p><i class="fas fa-angle-double-right"></i> <span>Enrico Fermi</span> - Postulated the existance of the neutrino and also discovered the weak force.</p>
+              </div>
+              <div class="g-element">
+                <img src="images/QMP/Born.jpg" alt="">
+                <p><i class="fas fa-angle-double-right"></i> <span>Max Born</span> - Formulated the pobability density function, used in Schr&ouml;dinger&apos;s equation.</p>
+              </div>
+              <div class="g-element">
+                <img src="images/QMP/Bohm.jpg" alt="">
+                <p><i class="fas fa-angle-double-right"></i> <span>David Bohm</span> - Developed pilot wave theory, otherwise known as hidden variable theory.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="founders-right">
+        <div class="founders-info">
+          <h1><i class="fas fa-angle-double-right"></i> <span>FOUNDERS</span> OF QUANTUM MECHANICS</h1>
+          <p>Ever since Max Planck&apos;s proposition of quantized light to resolve the ultraviolet catastrophe,
+            there have been many individuals and groups who have contributed invaluably to the discipline of Quantum Mechanics.</p>
+          <p>Here you can find some of the most notable names and a brief section about their contribution.</p>
+        </div>
+      </div>
+    </div>
+    <nav class="nav-burger">
+      <i class="fas fa-bars"></i>
+      <i class="fas fa-times"></i>
+    </nav>
+    <div class="image-nav-wrap">
+      <div class="image-nav">
+        <img src="images/qm-image-nav2.png" usemap="#image_map" alt="">
+        <map name="image_map">
+          <area alt="Superposition" title="Superposition" href="mechanics.html#superposition-target" coords="206,47,24" shape="circle" id="super-link">
+          <area alt="Entanglement" title="Entanglement" href="mechanics.html#entanglement-target" coords="118,47,25" shape="circle" id="ent-link">
+          <area alt="Measurement" title="Measurement" href="mechanics.html#measurement-target" coords="30,47,24" shape="circle" id="meas-link">
+          <area alt="Wave-Particle Duality" title="Wave-Particle Duality" href="mechanics.html#wpd-target" coords="257,33,345,68" shape="rect" id="wpd-link">
+        </map>
+        <span id="hover-title"></span>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- temp stuff
+-oscillating particles
+<div class = "particle-animation">
+  <div class = "obj-1"></div>
+  <div class = "obj-2"></div>
+</div>
+-->

@@ -1,0 +1,108 @@
+//Global Variables
+$body-bg: #000;
+$content-bg: #000;
+
+$red: #ee5253;
+$light_red: #ff6b6b;
+$blue: #2e86de;
+$light_blue: #54a0ff;
+$green: #10ac84;
+$light_green: #1dd1a1;
+$yellow: #ff9f43;
+$light_yellow: #feca57;
+$grey: #576574;
+$light_grey: #8395a7;
+$dark_grey: #222f3e;
+$white: #c8d6e5;
+
+/*--------HTML Tags [Overrides]--------*/
+html,body {
+  width: 100%;
+  overflow-x: hidden;
+	margin: 0;
+  scroll-behavior: smooth;
+  font: 20px 'Lato';
+  background-color: $white;
+  padding: 1em 1em 1em 1em;
+}
+
+p {
+  color: $dark_grey;
+}
+
+span.title-span {
+  color: $red;
+}
+
+hr {
+  border-color: $dark_grey;
+  margin-right: 4em;
+}
+
+.code-eg-result {
+  background-color: #272822;
+  border-radius: 0.7em;
+  border: 2px solid $white;
+  box-shadow: -5px 5px $dark_grey;
+  padding: 5px;
+  font-family: monospace;
+}
+
+code.eg {
+  background-color: #272822;
+  border-radius: 0.7em;
+  border: 2px solid $white;
+  box-shadow: -5px 5px $dark_grey;
+  padding: 5px;
+}
+
+span {
+  color: $white;
+}
+
+a {
+  text-decoration: none;
+  animation: normalLink 0.5s ease 1;
+  color: $dark_grey;
+}
+
+a:hover {
+  color: $grey;
+  animation: highlightLink 0.5s ease 1;
+  padding-left: 1em;
+}
+
+@keyframes highlightLink {
+  0%{color: $dark_grey; padding-left: 0em;}
+  100%{color: $grey; padding-left: 1em;}
+}
+
+@keyframes normalLink {
+  0%{color: $grey; padding-left: 1em;}
+  100%{color: $dark_grey; padding-left: 0em;}
+}
+
+td.code-s {
+  text-align: center;
+}
+
+td.mat {
+  width: 20em;
+  span {
+    color: $dark_grey;
+  }
+}
+
+table {
+  border-spacing:0 0px;
+  margin-right: 4em;
+
+  th {
+    font-size: 24px;
+  }
+
+  td {
+    border: 2px solid $dark_grey;
+    padding: 1em;
+  }
+}

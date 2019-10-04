@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Quantum Mechanics and Computing</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/qm-superpos.ico" />
+    <link rel="stylesheet" href="css/computing_style.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/global.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="editor/lib/codemirror.css">
+    <link rel="stylesheet" href="editor/theme/3024-day.css">
+    <link rel="stylesheet" href="editor/theme/3024-night.css">
+    <link rel="stylesheet" href="editor/theme/abcdef.css">
+    <link rel="stylesheet" href="editor/theme/ambiance.css">
+    <link rel="stylesheet" href="editor/theme/base16-dark.css">
+    <link rel="stylesheet" href="editor/theme/bespin.css">
+    <link rel="stylesheet" href="editor/theme/base16-light.css">
+    <link rel="stylesheet" href="editor/theme/blackboard.css">
+    <link rel="stylesheet" href="editor/theme/cobalt.css">
+    <link rel="stylesheet" href="editor/theme/colorforth.css">
+    <link rel="stylesheet" href="editor/theme/dracula.css">
+    <link rel="stylesheet" href="editor/theme/duotone-dark.css">
+    <link rel="stylesheet" href="editor/theme/duotone-light.css">
+    <link rel="stylesheet" href="editor/theme/eclipse.css">
+    <link rel="stylesheet" href="editor/theme/elegant.css">
+    <link rel="stylesheet" href="editor/theme/erlang-dark.css">
+    <link rel="stylesheet" href="editor/theme/gruvbox-dark.css">
+    <link rel="stylesheet" href="editor/theme/hopscotch.css">
+    <link rel="stylesheet" href="editor/theme/icecoder.css">
+    <link rel="stylesheet" href="editor/theme/isotope.css">
+    <link rel="stylesheet" href="editor/theme/lesser-dark.css">
+    <link rel="stylesheet" href="editor/theme/liquibyte.css">
+    <link rel="stylesheet" href="editor/theme/lucario.css">
+    <link rel="stylesheet" href="editor/theme/material.css">
+    <link rel="stylesheet" href="editor/theme/mbo.css">
+    <link rel="stylesheet" href="editor/theme/mdn-like.css">
+    <link rel="stylesheet" href="editor/theme/midnight.css">
+    <link rel="stylesheet" href="editor/theme/monokai.css">
+    <link rel="stylesheet" href="editor/theme/neat.css">
+    <link rel="stylesheet" href="editor/theme/neo.css">
+    <link rel="stylesheet" href="editor/theme/night.css">
+    <link rel="stylesheet" href="editor/theme/nord.css">
+    <link rel="stylesheet" href="editor/theme/oceanic-next.css">
+    <link rel="stylesheet" href="editor/theme/panda-syntax.css">
+    <link rel="stylesheet" href="editor/theme/paraiso-dark.css">
+    <link rel="stylesheet" href="editor/theme/paraiso-light.css">
+    <link rel="stylesheet" href="editor/theme/pastel-on-dark.css">
+    <link rel="stylesheet" href="editor/theme/railscasts.css">
+    <link rel="stylesheet" href="editor/theme/rubyblue.css">
+    <link rel="stylesheet" href="editor/theme/seti.css">
+    <link rel="stylesheet" href="editor/theme/shadowfox.css">
+    <link rel="stylesheet" href="editor/theme/solarized.css">
+    <link rel="stylesheet" href="editor/theme/the-matrix.css">
+    <link rel="stylesheet" href="editor/theme/tomorrow-night-bright.css">
+    <link rel="stylesheet" href="editor/theme/tomorrow-night-eighties.css">
+    <link rel="stylesheet" href="editor/theme/ttcn.css">
+    <link rel="stylesheet" href="editor/theme/twilight.css">
+    <link rel="stylesheet" href="editor/theme/vibrant-ink.css">
+    <link rel="stylesheet" href="editor/theme/xq-dark.css">
+    <link rel="stylesheet" href="editor/theme/xq-light.css">
+    <link rel="stylesheet" href="editor/theme/yeti.css">
+    <link rel="stylesheet" href="editor/theme/idea.css">
+    <link rel="stylesheet" href="editor/theme/darcula.css">
+    <link rel="stylesheet" href="editor/theme/yonce.css">
+    <link rel="stylesheet" href="editor/theme/zenburn.css">
+    <link rel="stylesheet" href="editor/addon/lint/lint.css">
+    <link rel="stylesheet" href="editor/addon/hint/show-hint.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@5.1.2/dist/math.min.js"></script>
+    <script src="https://unpkg.com/jshint@2.9.6/dist/jshint.js"></script>
+    <script src="editor/lib/codemirror.js"></script>
+    <script src="editor/mode/javascript/javascript.js"></script>
+    <script src="editor/addon/lint/lint.js"></script>
+    <script src="editor/addon/lint/javascript-lint.js"></script>
+    <script src="editor/addon/hint/show-hint.js"></script>
+    <script src="editor/addon/hint/javascript-hint.js"></script>
+    <script src="js/qcompjs/qcomp.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_HTMLorMML' async></script>
+  </head>
+  <body>
+    <div class="side-nav">
+      <ol>
+        <li><a href="index.html"><span>INTRO</span> TO QUANTUM PHYSICS</a></li>
+        <li><hr></li>
+        <li>
+          <ul>
+            <li><i class="fas fa-angle-double-right"></i><a href="index.html#intro-target"> Introduction</a></li>
+            <li><br></li>
+            <li><br></li>
+          </ul>
+        </li>
+        <li><a href="mechanics.html"><span>QUANTUM</span> MECHANICS</a></li>
+        <li><hr></li>
+        <li>
+          <ul>
+            <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#intro-target"> Where It All Began</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#wpd-target"> Wave-Particle Duality</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#measurement-target"> Measurement</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#superposition-target"> Superposition</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#entanglement-target"> Entanglement and Nonlocality</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#founders-target"> Founders of Quantum Mechanics</a></li>
+            <li><br></li>
+            <li><br></li>
+          </ul>
+        </li>
+        <li><a href="computing.html"><span>QUANTUM</span> COMPUTATION</a></li>
+        <li><hr></li>
+        <li>
+          <ul>
+            <li><i class="fas fa-angle-double-right"></i><a href="computing.html#qubitsvsbits-target"> Q-Bits vs Bits</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="computing.html#gates-target"> Gates</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="computing.html#algorithms-target"> Standard Algorithms</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="computing.html#qcompjs-target"> QComp.js Library</a>
+            <li><i class="fas fa-angle-double-right"></i><a href="computing.html#jseditor-target"> JavsScript Editor</a></li>
+            <li><br></li>
+            <li><br></li>
+          </ul>
+        </li>
+        <li><a href="index.html"><span>OTHER</span> INFORMATION</a></li>
+        <li><hr></li>
+        <li>
+          <ul>
+            <li><i class="fas fa-angle-double-right"></i><a href="index.html#social-target"> Social Media</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="index.html#feedback-target"> Feedback Form</a></li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+    <div class="landing">
+      <div class="box-wrapper">
+        <div class="header-box" id="scrollFade">
+          <div class="header-box-info">
+            <p id="text-pos"><span>QUANTUM</span></p>
+            <p>COMPUTATION</p>
+          </div>
+        </div>
+        <div class="down-button scrollFade" id="scrollTo">
+          <a href="#intro-target"><i class="fas fa-arrow-alt-circle-down"></i></a>
+        </div>
+      </div>
+      <div class="site-nav">
+        <ol>
+          <li><a href="index.html"><span>INTRO</span> TO QUANTUM PHYSICS</a></li>
+          <li><hr></li>
+          <li>
+            <ul>
+              <li><i class="fas fa-angle-double-right"></i><a href="index.html#intro-target"> Introduction</a></li>
+              <li><br></li>
+              <li><br></li>
+            </ul>
+          </li>
+          <li><a href="mechanics.html"><span>QUANTUM</span> MECHANICS</a></li>
+          <li><hr></li>
+          <li>
+            <ul>
+              <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#intro-target"> Where It All Began</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#wpd-target"> Wave-Particle Duality</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#measurement-target"> Measurement</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#superposition-target"> Superposition</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#entanglement-target"> Entanglement and Nonlocality</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="mechanics.html#founders-target"> Founders of Quantum Mechanics</a></li>
+              <li><br></li>
+              <li><br></li>
+            </ul>
+          </li>
+          <li><a href="computing.html"><span>QUANTUM</span> COMPUTATION</a></li>
+          <li><hr></li>
+          <li>
+            <ul>
+              <li><i class="fas fa-angle-double-right"></i><a href="computing.html#qubitsvsbits-target"> Q-Bits vs Bits</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="computing.html#gates-target"> Gates</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="computing.html#algorithms-target"> Standard Algorithms</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="computing.html#qcompjs-target"> QComp.js Library</a>
+              <li><i class="fas fa-angle-double-right"></i><a href="computing.html#jseditor-target"> JavsScript Editor</a></li>
+              <li><br></li>
+              <li><br></li>
+            </ul>
+          </li>
+          <li><a href="index.html"><span>OTHER</span> INFORMATION</a></li>
+          <li><hr></li>
+          <li>
+            <ul>
+              <li><i class="fas fa-angle-double-right"></i><a href="index.html#social-target"> Social Media</a></li>
+              <li><i class="fas fa-angle-double-right"></i><a href="index.html#feedback-target"> Feedback Form</a></li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="split-1" >
+      <div id="intro-target"></div>
+    </div>
+    <div id="qubitsvsbits-target"></div>
+    <div class="qubitsvsbits-wrapper" id="qubitsvsbits">
+      <div class="qubitsvsbits-left">
+        <div class="qubitsvsbits-info">
+          <article><h3><i class="fas fa-angle-double-right"></i><span> QUBITS</span> VS BITS</h3></article>
+          <hr>
+          <p>Throughout our everyday lives we are exposed to computation on a massive scale. Everyting from the phone in your
+            pocket to the supercomputers of industry like Google. But there is one significant aspect that ties all of these
+            together... and that is that every bit of information can and is represented by a sequence of 1's and 0's.
+          </p>
+          <p>Although
+            that may not seem problematic, it does have a big drawback. Consider conventional memory of 11 bits, this stores <u>one</u>
+            binary number up to 2047. Now compare that to a register of 11 qubits, which stores <u>all</u> of the numbers from 0 to 2048.
+            Now that is a huge improvement.
+          </p>
+        </div>
+      </div>
+      <div class="qubitsvsbits-right">
+        <div class="qubitsvsbits-info-2">
+          <p>Now that we have our all-mighty qubits, we need a way to represent them, and also more specifically a way to visualise
+            changes that occur on them. Low and a behold such a device exists! Utilising what is known as the Bloch Sphere to represent
+            qubits as a 3-dimensional vector in Hilbert space... That was probably quite a mouthful, so rather than speaking mathematical gibberish lets take a look at this sphere.
+          </p>
+          <img src="images/bloch_sphere.png" alt="Bloch Sphere">
+          <p>The principle behind the Bloch Sphere is that we have the poles at the top and bottom represent a complete 1 state (up) and 0 state (down).
+            We write these in Bra-Ket notation <code>|1></code> and <code>|0></code>. But because we are talking quantum bits, we can represent more than just 1 and 0, rotating the position
+            on the sphere by 180 degrees we get a superpositon between the two, written as: <code>|&#936;> = &#189;|0> + &#189;|1></code>. This shows that the state (when measured) has a
+            50/50 chance of being 1 or 0, as shown by the coefficients of <code>|0></code> and <code>|1></code>. Changing the positon of <code>|&#936;></code>, represents different states.
+            Each of which is related to the values of theta (&#952;) and phi (&#966;).
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="gates-target"></div>
+    <div class="gates-wrapper" id="gates">
+      <div class="gates-left">
+        <div class="gates-info">
+          <article><h3><i class="fas fa-angle-double-right"></i><span class="title-span"> QUANTUM</span> GATES</h3></article>
+          <hr>
+          <p>Both quantum gates and classical gates are logic gates, they compare binary conditions for an output. However, quantum gates leverage
+            two important elements of quantum mechanics for some pretty spectacular effects; entanglement and superposition. These concepts allow quantum
+            gates to utilise their full potential of many states inside just a single qubit.
+          </p>
+          <p>A particularly notable result is that quantum gates are reversable.
+            This basically means that any change made by a gate, when run through that gate again undoes that change. Let's take a look at some of these gates.
+          </p>
+          <p>First up are the Pauli gates (named after Wolfgang Pauli): X, Y and Z. The X gate is basically the equivalent of a not gate, or logical negation. It
+            takes a qubit such as <code>|1></code> and flips it to <code>|0></code>. Think of it as a rotation around the x-axis of the Bloch Sphere.
+            <script type="math/tex;mode=display">X = \begin{bmatrix}0&1\\1&0\end{bmatrix}\;\left|1\right> = \begin{bmatrix}0\\1\end{bmatrix}\begin{bmatrix}0 & 1\\1 & 0\end{bmatrix} \rightarrow \begin{bmatrix}1\\0\end{bmatrix} = \left|0\right></script>
+            </p>
+        </div>
+      </div>
+      <div class="gates-right">
+        <div class="gates-info-2">
+          <p>Y and Z gates are similar by apply rotations to the y and z axis of the Bloch Sphere. Their matrix representations are as follows:
+            <script type="math/tex;mode=display">Y = \begin{bmatrix}0&-i\\i&0\end{bmatrix}\;Z = \begin{bmatrix}1&0\\0&-1\end{bmatrix}</script>
+            One of the most important gates in quantum computing is the Hadamard. This gate is the basis of almost every uniquely quantum algorithm
+            that exists. It's purpose it to take a state such as <code>|0></code> and create a superpositon of its possible states: <code>|&#936;>=|0>+|1></code>.
+            <script type="math/tex;mode=display">H = \frac{1}{\sqrt 2}\begin{bmatrix}1&1\\1&-1\end{bmatrix}\;\left|0\right> = \begin{bmatrix}1\\0\end{bmatrix}\frac{1}{\sqrt 2}\begin{bmatrix}1&1\\1&-1\end{bmatrix} \rightarrow \frac{\left|0\right> + \left|1\right>}{\sqrt 2}</script>
+            This is quite a difficult concept to wrap your head around, the illustration of the opetation on the Bloch Sphere below should give you a better idea.
+          </p>
+          <p><i class="italic_i"><u>Note:</u> There are even more gates than are listed here, if you want  explore them check out the wikipedia page<br><i class="fas fa-angle-double-right"></i><a href="https://en.wikipedia.org/wiki/Quantum_logic_gate"> https://en.wikipedia.org/wiki/Quantum_logic_gate</a>
+          </i></p>
+          <img src="images/hadamard_applied.jpeg" alt="">
+        </div>
+      </div>
+    </div>
+    <div id="algorithms-target"></div>
+    <div class="algorithms-wrapper" id="algorithms">
+      <div class="algorithms-left">
+        <div class="algorithms-info">
+          <article><h3><i class="fas fa-angle-double-right"></i><span class="title-span"> QUANTUM</span> ALGORITHMS</h3></article>
+          <hr>
+          <p>In 1981, Richard Feynman proposed for the first time, a new type of computer. A quantum computer. Algorithms created for a quantum computer would
+            exploit the unique non-classical systems on which they are built, allowing them to process extrordinarily large quantities of data in polynomial
+            time.
+          </p>
+          <p>A well known, if not the most well known, algorithm used in quantum computing is Peter Shor's algorithm for prime factorisation in polynomial time*.
+            This algorithm presents a problem for public-key cyptography, such as the RSA algorithm, due to the fact that they depend on large primes. Shor proved
+            that implementing his algorithm on a quantum computer would be unprecidented in speed as opposed to the enourmous amount of time to run it classically.
+          </p>
+          <p>
+          </p>Essentially the algorithm utilised the QFT (Quantum Fourier Transform) to run to find the period of a function on x. It does this but having a superposition
+          of all function variations at once, the ones that dont lead to an answer interfere destructively and the ones that lead to an answer constructively interfere.
+          We use this to find the period of the following function:
+          <script type="math/tex;mode=display">a^x\;mod\;N</script>
+          From the result, we can derive that the factors of N are:
+          <script type="math/tex;mode=display">a^{period/2}-1\;\;and\;\;gcd(N)</script>
+        </div>
+      </div>
+      <div class="algorithms-right">
+        <div class="algorithms-info-2">
+          <p>Another well known algorithm is for super-dense coding and transmittion of bits via entanglement. The algorithm goes like this; Alice and Bob share a pair of
+            entangled qubits, Alice wants to send two classical bits to Bob. To achieve theis, they must adhere to a protocol:
+          </p>
+          <ol>
+            <li>Alice and Bob have an entangled pair of qubits in their possession.<script type="math/tex;mode=display">\left|\Psi\right>=\frac{1}{\sqrt 2}(\left|00\right>+\left|11\right>)</script></li>
+            <li>Alice applies a quantum operation to her qubit depending on wich two classical bits she wishes to send.</li>
+            <li>Alice sends her qubit to Bob.</li>
+            <li>Bob measures the entalged pair and applies a quantum operation depending on the result.</li>
+          </ol>
+          <p>Below is a table showing each of the possible transfers done with the two entangled qubits.</p>
+          <table>
+            <tr>
+              <th>Tranferred Bits</th>
+              <th>Alice's Operation</th>
+              <th>Resulting Two-Qubit State</th>
+              <th>Bob's Measurement</th>
+            </tr>
+            <tr>
+              <td><script type="math/tex;mode=display">00</script></td>
+              <td><script type="math/tex;mode=display">I</script></td>
+              <td><script type="math/tex;mode=display">I\left|\Psi\right>=\frac{1}{\sqrt 2}(\left|00\right>+\left|11\right>)</script></td>
+              <td><script type="math/tex;mode=display">\left|\Psi\right>=\alpha\left|0\right>+\beta\left|1\right></script></td>
+            </tr>
+            <tr>
+              <td><script type="math/tex;mode=display">01</script></td>
+              <td><script type="math/tex;mode=display">Z</script></td>
+              <td><script type="math/tex;mode=display">Z\left|\Psi\right>=\frac{1}{\sqrt 2}(\left|00\right>-\left|11\right>)</script></td>
+              <td><script type="math/tex;mode=display">\left|\Psi\right>=\alpha\left|0\right>-\beta\left|1\right></script></td>
+            </tr>
+            <tr>
+              <td><script type="math/tex;mode=display">10</script></td>
+              <td><script type="math/tex;mode=display">X</script></td>
+              <td><script type="math/tex;mode=display">X\left|\Psi\right>=\frac{1}{\sqrt 2}(\left|00\right>+\left|11\right>)</script></td>
+              <td><script type="math/tex;mode=display">\left|\Psi\right>=\alpha\left|1\right>+\beta\left|0\right></script></td>
+            </tr>
+            <tr>
+              <td><script type="math/tex;mode=display">11</script></td>
+              <td><script type="math/tex;mode=display">iY</script></td>
+              <td><script type="math/tex;mode=display">iY\left|\Psi\right>=\frac{1}{\sqrt 2}(\left|00\right>+\left|11\right>)</script></td>
+              <td><script type="math/tex;mode=display">\left|\Psi\right>=\alpha\left|1\right>-\beta\left|0\right></script></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div id="qcompjs-target"></div>
+    <div class="qcompjs-wrapper" id="qcompjs">
+      <div class="qcompjs-left">
+        <div class="qcompjs-info">
+          <article><h3><i class="fas fa-angle-double-right"></i><span class="title-span"> QComp.js</span> JAVASCRIPT LIBRARY</h3></article>
+          <hr>
+          <p>QComp.js is a JavaScript library that I built to simulate quantum computing, more specifically qubits and quantum gates. The basic idea is that you
+            initialise a new quantum register with bit values as an string argument (either Bra-Ket notation or just numbers), for example:
+          </p>
+          <code class="cm-s-monokai eg"><span class="cm-keyword">const</span> <span class="cm-def">qc</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">QC(<span class="cm-string">"|01101>"</span>);</span></code>
+          <p>Then you apply your algorithm as a series of gate calls on qc. As an example, we will use a Pauli-X gate on bits 0 and 1 and then a Hadamard gate on
+            bits 2 and 3. Putting this inside a <code class="cm-s-monokai"><span class="cm-variable">log();</span></code> command to display it in the result section:
+          </p>
+          <code class="cm-s-monokai eg"><span class="cm-variable">log(qc.<span class="cm-property">X</span>([<span class="cm-number">0</span>,<span class="cm-number">1</span>]).<span class="cm-property">H</span>([<span class="cm-number">2</span>,<span class="cm-number">3</span>]).<span class="cm-property">getValues</span>());</span></code>
+          <p>The resut of this series of operations is:</p>
+          <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[0,1],[1,0],[0.7071067811865475,-0.7071067811865475],[0.7071067811865475,0.7071067811865475],[0,1]]</span></div>
+        </div>
+      </div>
+      <div class="qcompjs-right">
+        <div class="qcompjs-info-2">
+          <p>As an example of gate reversal, lets apply the Hadamard to bits 2 and 3 again:</p>
+          <code class="cm-s-monokai eg"><span class="cm-variable">log(qc.<span class="cm-property">H</span>([<span class="cm-number">2</span>,<span class="cm-number">3</span>]).<span class="cm-property">getValues</span>());</span></code>
+          <br>
+          <br>
+          <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[0,1],[1,0],[0,1],[1,0],[0,1]]</span></div>
+          <p>And there we go! we have the same result as if you were to just apply the Pauli-X to bits 0 and 1 (You may get some rounding errors; 0.9 recurring instead 1).</p>
+          <p>The full spec sheet for QComp.js can be found here, it's a good idea to read this before you start coding!</p>
+          <p><i class="fas fa-angle-double-right"></i><a href="spec_sheet.html" target="_blank"> Specification Sheet</a></p>
+          <p>There is an in-browser JavaScript IDE and interpreter below which you can use to test out this library, if you want to get a copy of the library itself, there is a link to the GitLab repositsory where you can download it.<br>
+            <i class="note"><u>Note:</u> You can change the IDE theme by clicking on the cog icon in the top right of the result panel.</i>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="jseditor-target"></div>
+    <div class="editor-wrapper">
+      <div id="codeeditor">
+        <div class="options">
+          <i class="fas fa-cog"><input type="checkbox" class="options-show"></i>
+          <div class="theme-selector">
+            <p><i class="fas fa-angle-double-right"></i> EDITOR THEME<br>
+              <select id="select">
+                <option selected>default</option>
+                <option>3024-day</option>
+                <option>3024-night</option>
+                <option>abcdef</option>
+                <option>ambiance</option>
+                <option>base16-dark</option>
+                <option>base16-light</option>
+                <option>bespin</option>
+                <option>blackboard</option>
+                <option>cobalt</option>
+                <option>colorforth</option>
+                <option>darcula</option>
+                <option>dracula</option>
+                <option>duotone-dark</option>
+                <option>duotone-light</option>
+                <option>eclipse</option>
+                <option>elegant</option>
+                <option>erlang-dark</option>
+                <option>gruvbox-dark</option>
+                <option>hopscotch</option>
+                <option>icecoder</option>
+                <option>idea</option>
+                <option>isotope</option>
+                <option>lesser-dark</option>
+                <option>liquibyte</option>
+                <option>lucario</option>
+                <option>material</option>
+                <option>mbo</option>
+                <option>mdn-like</option>
+                <option>midnight</option>
+                <option>monokai</option>
+                <option>neat</option>
+                <option>neo</option>
+                <option>night</option>
+                <option>nord</option>
+                <option>oceanic-next</option>
+                <option>panda-syntax</option>
+                <option>paraiso-dark</option>
+                <option>paraiso-light</option>
+                <option>pastel-on-dark</option>
+                <option>railscasts</option>
+                <option>rubyblue</option>
+                <option>seti</option>
+                <option>shadowfox</option>
+                <option>solarized dark</option>
+                <option>solarized light</option>
+                <option>the-matrix</option>
+                <option>tomorrow-night-bright</option>
+                <option>tomorrow-night-eighties</option>
+                <option>ttcn</option>
+                <option>twilight</option>
+                <option>vibrant-ink</option>
+                <option>xq-dark</option>
+                <option>xq-light</option>
+                <option>yeti</option>
+                <option>yonce</option>
+                <option>zenburn</option>
+              </select>
+            </p>
+          </div>
+        </div>
+        <button class="exec-code">RUN CODE</button>
+        <button class="clear-console">CLEAR</button>
+      </div>
+      <div class="result-column"><p id="result-label">Result: <p><div class="result"></div></div>
+      <script src="js/editor/evaluate_editor.js"></script>
+    </div>
+    <nav class="nav-burger">
+      <i class="fas fa-bars"></i>
+      <i class="fas fa-times"></i>
+    </nav>
+  </body>
+</html>

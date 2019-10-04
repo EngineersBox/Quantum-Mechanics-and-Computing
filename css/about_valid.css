@@ -1,0 +1,50 @@
+/*--------HTML Tags [Overrides]--------*/
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  scroll-behavior: smooth; }
+
+/*--------Globals--------*/
+/*--------INDEX.HTML--------*/
+body {
+  font: 24px 'Lato';
+  background: #fff;
+  overflow-x: hidden; }
+
+.reflection {
+  width: 100%;
+  height: auto;
+  padding: 2em; }
+
+h1 {
+  margin-left: 1em; }
+
+hr {
+  border: 1px solid #222f3e;
+  margin-left: 2em;
+  margin-right: 1em; }
+
+span {
+  color: #ee5253; }
+
+.validation {
+  width: 100%; }
+  .validation h2 {
+    margin-left: 1em; }
+  .validation ul {
+    list-style-type: none; }
+  .validation img {
+    width: 50%;
+    padding: 10px;
+    border-radius: 1em;
+    border: 3px solid #222f3e;
+    -webkit-box-shadow: -10px 10px #222f3e;
+    box-shadow: -10px 10px #222f3e;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s; }
+  .validation img:hover {
+    border: 3px solid #576574;
+    -webkit-box-shadow: -10px 10px #576574;
+    box-shadow: -10px 10px #576574; }

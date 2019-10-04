@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>QComp.js Specification Sheet</title>
+  <link rel="shortcut icon" type="image/x-icon" href="images/qm-superpos.ico"/>
+  <link rel="stylesheet" href="css/spec_sheet.css" type="text/css"/>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="editor/lib/codemirror.css">
+  <link rel="stylesheet" href="editor/theme/monokai.css">
+  <script src="js/qcompjs/qcomp.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+<body>
+  <h1><i class="fas fa-angle-double-right"></i> <span class="title-span">QComp.js</span> Specification Sheet</h1>
+  <hr>
+  <br>
+  <br>
+  <p><u>GitLab Repo:</u><br><i class="fas fa-angle-double-right"></i> <a href="https://gitlab.com/EngineersBox/qcompjs">https://gitlab.com/EngineersBox/qcompjs</a></p>
+  <p><u>GitHub Repo (pushed from GitLab):</u><br><i class="fas fa-angle-double-right"></i> <a href="https://github.com/EngineersBox/qcompjs">https://github.com/EngineersBox/qcompjs</a></p>
+  <p><u>JavaScript Version:</u> ECMAscript 6</p>
+  <p><u>Dependancies:</u> Math.js</p>
+  <br>
+  <br>
+  <h2>CONSTANTS</h2>
+  <br>
+  <table>
+    <tr>
+      <th><i>Constant</i></th>
+      <th><i>Matrix Representation</i></th>
+      <th><i>Description</i></th>
+      <th><i>Code Representation</i></th>
+    </tr>
+    <tr>
+      <td>one</td>
+      <td class="mat"><script type="math/tex;mode=display">one = \begin{bmatrix}0\\1\end{bmatrix}</script></td>
+      <td>2-dimensional Hilbert space vector representation of qubit value of 1</td>
+      <td class="code-s"><code class="cm-s-monokai eg"><span class="cm-variable"><span class="cm-keyword">const</span> <span class="cm-def">one</span> <span class="cm-operator">=</span> <span>[<span class="cm-number">0</span>,<span class="cm-number">1</span>];</span></span></code></td>
+    </tr>
+    <tr>
+      <td>zero</td>
+      <td class="mat"><script type="math/tex;mode=display">zero = \begin{bmatrix}1\\0\end{bmatrix}</script></td>
+      <td>2-dimensional Hilbert space vector representation of qubit value of 0</td>
+      <td class="code-s"><code class="cm-s-monokai eg"><span class="cm-variable"><span class="cm-keyword">const</span> <span class="cm-def">zero</span> <span class="cm-operator">=</span> <span>[<span class="cm-number">1</span>,<span class="cm-number">0</span>];</span></span></code></td>
+    </tr>
+    <tr>
+      <td>posi</td>
+      <td class="mat"><script type="math/tex;mode=display">posi = 0+1i</script></td>
+      <td>Complex number with positive complex value of 1</td>
+      <td class="code-s"><code class="cm-s-monokai eg"><span class="cm-variable"><span class="cm-keyword">const</span> <span class="cm-def">posi</span> <span class="cm-operator">=</span> math.<span class="cm-property">complex</span>(<span class="cm-string">"0+1i"</span>);</span></code></td>
+    </tr>
+    <tr>
+      <td>negi</td>
+      <td class="mat"><script type="math/tex;mode=display">negi = 0-1i</script></td>
+      <td>Complex number with negative complex value of 1</td>
+      <td class="code-s"><code class="cm-s-monokai eg"><span class="cm-variable"><span class="cm-keyword">const</span> <span class="cm-def">negi</span> <span class="cm-operator">=</span> math.<span class="cm-property">complex</span>(<span class="cm-string">"0-1i"</span>);</span></code></td>
+    </tr>
+  </table>
+  <br>
+  <br>
+  <h2>FUNCTIONS</h2>
+  <br>
+  <table>
+    <tr>
+      <th><i>Function</i></th>
+      <th><i>Matrix Representation</i></th>
+      <th><i>Description</i></th>
+      <th><i>Usage</i></th>
+    </tr>
+    <tr>
+      <td>QC(args)</td>
+      <td class="mat">None</td>
+      <td>Instantiate a new quantum register with values as arguments.</td>
+      <td class="code-s">
+        <code class="cm-s-monokai eg"><span class="cm-keyword">const</span> <span class="cm-def">qc</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">QC(<span class="cm-string">"|01101>"</span>);</span></code><br><br>or<br><br>
+        <code class="cm-s-monokai eg"><span class="cm-keyword">const</span> <span class="cm-def">qc</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">QC(<span class="cm-string">"01101"</span>);</span></code>
+      </td>
+    </tr>
+    <tr>
+      <td>log()</td>
+      <td class="mat">None</td>
+      <td>Display arguments in console</td>
+      <td class="code-s">
+        <code class="cm-s-monokai eg"><span class="cm-variable">log(<span class="cm-string">"Example"</span>);</span></code>
+        <br>
+        <br>
+        <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: Example</span></div>
+      </td>
+    </tr>
+    <tr>
+      <td>#.getValues()</td>
+      <td class="mat">None</td>
+      <td>Return a formatted string of this.values of a QC instantiation</td>
+      <td class="code-s">
+        <div class="cm-s-monokai code-eg-result"><span class="cm-comment">//this.values = [[0,1],[1,0],[1,0],[0,1]]</span><br>
+        <span class="cm-variable">qc.<span class="cm-property">getValues</span>();</span></div>
+        <br>
+        <br>
+        <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[0,1],[1,0],[1,0],[0,1]]</span></div>
+      </td>
+    </tr>
+    <tr>
+      <td>format.evalBraKet(args)</td>
+      <td class="mat">None</td>
+      <td>Return an array of matrix-vector formatted 1's and 0's given via arguments</td>
+      <td class="code-s">
+        <code class="cm-s-monokai eg"><span class="cm-variable">format.<span class="cm-property">evalBraKet</span>(<span class="cm-string">"|1001>"</span>);</span></code>
+        <br>
+        <br>
+        <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[0,1],[1,0],[1,0],[0,1]]</span></div>
+      </td>
+    </tr>
+    <tr>
+      <td>format.convetResultToString(args)</td>
+      <td class="mat">None</td>
+      <td>Return a format retainted string of the argument</td>
+      <td class="code-s">
+        <code class="cm-s-monokai eg"><span class="cm-variable">format.<span class="cm-property">convetResultToString</span>([[<span class="cm-number">0</span>,<span class="cm-number">1</span>],[<span class="cm-number">1</span>,<span class="cm-number">0</span>]]);</span></code>
+        <br>
+        <br>
+        <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[0,1],[1,0]]</span></div>
+      </td>
+    </tr>
+    <tr>
+      <td>#.X(args)</td>
+      <td class="mat"><script type="math/tex;mode=display">X = \begin{bmatrix}0&1\\1&0\end{bmatrix}</script></td>
+      <td>Return Pauli-X matrix multiplied by vectors in this.values specified by argument array</td>
+      <td class="code-s">
+        <div class="cm-s-monokai code-eg-result"><span class="cm-comment">//this.values = [[0,1],[1,0],[1,0],[0,1]]</span><br>
+        <span class="cm-variable">qc.<span class="cm-property">X</span>([<span class="cm-number">0</span>,<span class="cm-number">1</span>]]);</span></div>
+        <br>
+        <br>
+        <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[1,0],[0,1],[1,0],[0,1]]</span></div>
+      </td>
+    </tr>
+    <tr>
+      <td>#.Y(args)</td>
+      <td class="mat"><script type="math/tex;mode=display">Y = \begin{bmatrix}0&-i\\i&0\end{bmatrix}</script></td>
+      <td>Return Pauli-Y matrix multiplied by vectors in this.values specified by argument array</td>
+      <td class="code-s">
+        <div class="cm-s-monokai code-eg-result"><span class="cm-comment">//this.values = [[0,1],[1,0],[1,0],[0,1]]</span><br>
+        <span class="cm-variable">qc.<span class="cm-property">Y</span>([<span class="cm-number">0</span>,<span class="cm-number">1</span>]]);</span></div>
+        <br>
+        <br>
+        <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[1+0i, 0+0i],[0+0i, -1+0i],[1,0],[0,1]]</span></div>
+      </td>
+    </tr>
+    <tr>
+      <td>#.Z(args)</td>
+      <td class="mat"><script type="math/tex;mode=display">X = \begin{bmatrix}1&0\\0&-1\end{bmatrix}</script></td>
+      <td>Return Pauli-Z matrix multiplied by vectors in this.values specified by argument array</td>
+      <td class="code-s">
+        <div class="cm-s-monokai code-eg-result"><span class="cm-comment">//this.values = [[0,1],[1,0],[1,0],[0,1]]</span><br>
+        <span class="cm-variable">qc.<span class="cm-property">Z</span>([<span class="cm-number">0</span>,<span class="cm-number">1</span>]]);</span></div>
+        <br>
+        <br>
+        <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[0,-1],[1,0],[1,0],[0,1]]</span></div>
+      </td>
+    </tr>
+    <tr>
+      <td>#.S(args)</td>
+      <td class="mat"><script type="math/tex;mode=display">S = \begin{bmatrix}1&0\\0&i\end{bmatrix}</script></td>
+      <td>Rotate bits in this.values specified by argument list by 90 degrees on the z-axis</td>
+      <td class="code-s">
+        <div class="cm-s-monokai code-eg-result"><span class="cm-comment">//this.values = [[0,1],[1,0],[1,0],[0,1]]</span><br>
+        <span class="cm-variable">qc.<span class="cm-property">S</span>([<span class="cm-number">0</span>,<span class="cm-number">1</span>]]);</span></div>
+        <br>
+        <br>
+        <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[0,1+0i],[1,0+0i],[1,0],[0,1]]</span></div>
+      </td>
+    </tr>
+    <tr>
+      <td>#.Sdagger(args)</td>
+      <td class="mat"><script type="math/tex;mode=display">S^{\dagger} = \begin{bmatrix}1&0\\0&-i\end{bmatrix}</script></td>
+      <td>Conjugate transpose of the S gate</td>
+      <td class="code-s">
+        <div class="cm-s-monokai code-eg-result"><span class="cm-comment">//this.values = [[0,1],[1,0],[1,0],[0,1]]</span><br>
+        <span class="cm-variable">qc.<span class="cm-property">Sdagger</span>([<span class="cm-number">0</span>,<span class="cm-number">1</span>]]);</span></div>
+        <br>
+        <br>
+        <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[0+0i,-1+0i],[1+0i,0+0i],[1,0],[0,1]]</span></div>
+      </td>
+    </tr>
+    <tr>
+      <td>#.sqrtx(args)</td>
+      <td class="mat"><script type="math/tex;mode=display">\sqrt x = 0.5\times\begin{bmatrix}i&-i\\-i&i\end{bmatrix}</script></td>
+      <td>Return square root of x matrix multiplied by vectors in this.values specified by argument array</td>
+      <td class="code-s">
+        <div class="cm-s-monokai code-eg-result"><span class="cm-comment">//this.values = [[0,1],[1,0],[1,0],[0,1]]</span><br>
+        <span class="cm-variable">qc.<span class="cm-property">sqrtx</span>([<span class="cm-number">0</span>,<span class="cm-number">1</span>]]);</span></div>
+        <br>
+        <br>
+        <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[-0.5+0i,0.5+0i],[0.5+0i, -0.5+0i],[1,0],[0,1]]</span></div>
+      </td>
+    </tr>
+    <tr>
+      <td>#.phase(theta, args)</td>
+      <td class="mat"><script type="math/tex;mode=display">phase = \begin{bmatrix}1&0\\0&e^{i\theta}\end{bmatrix}</script></td>
+      <td>Return a phase rotation by theta radians to this.values specified by argument array</td>
+      <td class="code-s">
+        <div class="cm-s-monokai code-eg-result"><span class="cm-comment">//this.values = [[0,1],[1,0],[1,0],[0,1]]</span><br>
+        <span class="cm-variable">qc.<span class="cm-property">phase</span>(math.<span class="cm-property">pi</span>/<span class="cm-number">3</span>,[<span class="cm-number">0</span>,<span class="cm-number">1</span>]);</span></div>
+        <br>
+        <br>
+        <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[0,2.849653908226361],[1,0],[1,0],[0,1]]</span></div>
+      </td>
+    </tr>
+    <tr>
+      <td>#.T(args)</td>
+      <td class="mat"><script type="math/tex;mode=display">T = \begin{bmatrix}1&0\\0&e^{i\frac{\pi}{4}}\end{bmatrix}</script></td>
+      <td>Return a rotation by <sup>&pi;</sup>&frasl;<sub>4</sub> radians to this.values specified by argument array</td>
+      <td class="code-s">
+        <div class="cm-s-monokai code-eg-result"><span class="cm-comment">//this.values = [[0,1],[1,0],[1,0],[0,1]]</span><br>
+        <span class="cm-variable">qc.<span class="cm-property">T</span>([<span class="cm-number">0</span>,<span class="cm-number">1</span>]);</span></div>
+        <br>
+        <br>
+        <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[0,2.1932800507380152],[1,0],[1,0],[0,1]]</span></div>
+      </td>
+    </tr>
+    <tr>
+      <td>#.Tdagger(args)</td>
+      <td class="mat"><script type="math/tex;mode=display">T^{\dagger} = \begin{bmatrix}1&0\\0&e^{-i\frac{\pi}{4}}\end{bmatrix}</script></td>
+      <td>Conjugate transpose of the T gate</td>
+      <td class="code-s">
+        <div class="cm-s-monokai code-eg-result"><span class="cm-comment">//this.values = [[0,1],[1,0],[1,0],[0,1]]</span><br>
+        <span class="cm-variable">qc.<span class="cm-property">Tdagger</span>([<span class="cm-number">0</span>,<span class="cm-number">1</span>]);</span></div>
+        <br>
+        <br>
+        <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[0,0.45593812776599624+0i],[1,0+0i],[1,0],[0,1]]</span></div>
+      </td>
+    </tr>
+    <tr>
+      <td>#.H(args)</td>
+      <td class="mat"><script type="math/tex;mode=display">H= \frac{1}{\sqrt 2}\times\begin{bmatrix}1&1\\1&-1\end{bmatrix}</script></td>
+      <td>Return a superposition given via qubit state to this.values specified by argument array</td>
+      <td class="code-s">
+        <div class="cm-s-monokai code-eg-result"><span class="cm-comment">//this.values = [[0,1],[1,0],[1,0],[0,1]]</span><br>
+        <span class="cm-variable">qc.<span class="cm-property">H</span>([<span class="cm-number">0</span>,<span class="cm-number">1</span>]);</span></div>
+        <br>
+        <br>
+        <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[0.7071067811865475,-0.7071067811865475],[0.7071067811865475,0.7071067811865475],[1,0],[0,1]]</span></div>
+      </td>
+    </tr>
+    <tr>
+      <td>#.swap(firstBit, secondBit)</td>
+      <td class="mat"><script type="math/tex;mode=display">swap= \begin{bmatrix}1&0&0&0\\0&0&1&0\\0&1&0&0\\0&0&0&1\end{bmatrix}</script></td>
+      <td>Swap the values of the bits denoted by indexes in arguments as firstBit and secondBit</td>
+      <td class="code-s">
+        <div class="cm-s-monokai code-eg-result"><span class="cm-comment">//this.values = [[0,1],[1,0],[1,0],[0,1]]</span><br>
+        <span class="cm-variable">qc.<span class="cm-property">swap</span>(<span class="cm-number">0</span>,<span class="cm-number">1</span>);</span></div>
+        <br>
+        <br>
+        <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[1,0],[0,1],[1,0],[0,1]]</span></div>
+      </td>
+    </tr>
+    <tr>
+      <td>#.cnot(controlBits, targetBits)</td>
+      <td class="mat"><script type="math/tex;mode=display">cnot = \begin{bmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{bmatrix}</script></td>
+      <td>Apply a Pauli-X gate to the targetBits if and only if the controlBits are 1's</td>
+      <td class="code-s">
+        <div class="cm-s-monokai code-eg-result"><span class="cm-comment">//this.values = [[0,1],[0,1],[1,0],[0,1]]</span><br>
+        <span class="cm-variable">qc.<span class="cm-property">cnot</span>([<span class="cm-number">0</span>,<span class="cm-number">1</span>],[<span class="cm-number">2</span>,<span class="cm-number">3</span>]);</span></div>
+        <br>
+        <br>
+        <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[0,1],[0,1],[0,1],[1,0]]</span></div>
+      </td>
+    </tr>
+    <tr>
+      <td>#.cswap(controlBits, targetBits)</td>
+      <td class="mat"><script type="math/tex;mode=display">cswap= \begin{bmatrix}1&0&0&0&0&0&0&0\\0&1&0&0&0&0&0&0\\0&0&1&0&0&0&0&0\\0&0&0&1&0&0&0&0\\0&0&0&0&1&0&0&0\\0&0&0&0&0&0&1&0\\0&0&0&0&0&1&0&0\\0&0&0&0&0&0&0&1\end{bmatrix}</script></td>
+      <td>Swap the values of the targetBits (targetBits must be of length 2) if and only if the controlBits are 1's</td>
+      <td class="code-s">
+        <div class="cm-s-monokai code-eg-result"><span class="cm-comment">//this.values = [[0,1],[0,1],[1,0],[0,1]]</span><br>
+        <span class="cm-variable">qc.<span class="cm-property">cwap</span>([<span class="cm-number">0</span>,<span class="cm-number">1</span>],[<span class="cm-number">2</span>,<span class="cm-number">3</span>]);</span></div>
+        <br>
+        <br>
+        <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[0,1],[0,1],[0,1],[1,0]]</span></div>
+      </td>
+    </tr>
+    <tr>
+      <td>#.rx(theta, args)</td>
+      <td class="mat"><script type="math/tex;mode=display">Rx_\theta = \begin{bmatrix}cos(\frac{\theta}{2})&-isin(\frac{\theta}{2})\\-isin(\frac{\theta}{2})&cos(\frac{\theta}{2})\end{bmatrix}</script></td>
+      <td>Return a rotation on the x-axis by theta radians to this.values specified by argument array</td>
+      <td class="code-s">
+        <div class="cm-s-monokai code-eg-result"><span class="cm-comment">//this.values = [[0,1],[1,0],[1,0],[0,1]]</span><br>
+        <span class="cm-variable">qc.<span class="cm-property">rx</span>(math.<span class="cm-property">pi</span>/<span class="cm-number">5</span>,[<span class="cm-number">0</span>,<span class="cm-number">1</span>]);</span></div>
+        <br>
+        <br>
+        <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[-0.3090169943749474+0i, 0.9510565162951535,+0i],[0.9510565162951535+0i,-0.3090169943749474+0i],[1,0],[0,1]]</span></div>
+      </td>
+    </tr>
+    <tr>
+      <td>#.ry(theta, args)</td>
+      <td class="mat"><script type="math/tex;mode=display">Ry_\theta = \begin{bmatrix}cos(\frac{\theta}{2})&-sin(\frac{\theta}{2})\\sin(\frac{\theta}{2})&cos(\frac{\theta}{2})\end{bmatrix}</script></td>
+      <td>Return a rotation on the y-axis by theta radians to this.values specified by argument array</td>
+      <td class="code-s">
+        <div class="cm-s-monokai code-eg-result"><span class="cm-comment">//this.values = [[0,1],[1,0],[1,0],[0,1]]</span><br>
+        <span class="cm-variable">qc.<span class="cm-property">ry</span>(math.<span class="cm-property">pi</span>/<span class="cm-number">5</span>,[<span class="cm-number">0</span>,<span class="cm-number">1</span>]);</span></div>
+        <br>
+        <br>
+        <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[0.5+0i,0.8660254037844387+0i],[0.8660254037844387+0i, -0.5+0i],[1,0],[0,1]]</span></div>
+      </td>
+    </tr>
+    <tr>
+      <td>#.rz(theta, args)</td>
+      <td class="mat"><script type="math/tex;mode=display">Rz_\theta = \begin{bmatrix}e^{-i\frac{\theta}{2}}&0\\0&e^{i\frac{\theta}{2}}\end{bmatrix}</script></td>
+      <td>Return a rotation on the z-axis by theta radians to this.values specified by argument array</td>
+      <td class="code-s">
+        <div class="cm-s-monokai code-eg-result"><span class="cm-comment">//this.values = [[0,1],[1,0],[1,0],[0,1]]</span><br>
+        <span class="cm-variable">qc.<span class="cm-property">rz</span>(math.<span class="cm-property">pi</span>/<span class="cm-number">5</span>,[<span class="cm-number">0</span>,<span class="cm-number">1</span>]);</span></div>
+        <br>
+        <br>
+        <div class="code-eg-result cm-s-monokai"><span class="cm-variable">Result: [[0+0i, 0.9510565162951535+0.3090169943749474i],[0.9510565162951535-0.3090169943749474i,0+0i],[1,0],[0,1]]</span></div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
